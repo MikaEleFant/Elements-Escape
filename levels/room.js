@@ -1,6 +1,7 @@
 class Room {
-  constructor(items) {
+  constructor(items, inventory) {
     this.items = items;
+    this.inventory = inventory;
   }
 
   checkItem(item) {

@@ -1,8 +1,8 @@
 import Room from "room.js";
 
 class Room1 extends Room {
-  constructor(items) {
-    super(items);
+  constructor(items, inventory) {
+    super(items, inventory);
   }
 
   use(obj1, obj2) {
