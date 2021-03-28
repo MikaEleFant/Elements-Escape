@@ -1,145 +1,14 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="stylesheet" href="style/default.css">
-
-  <title>Elements Escape</title>
-</head>
-<body>
-  <div class="display">
-    <div class="main-menu">
-      <div class="title">Elements Escape</div>
-      <div class="subtitle">A text-based escape game based on the elements!</div>
-      <div class="instructions">
-        <p>How To Play:</p>
-        <p>Choose an action followed by the corresponding item(s) to interact with:</p>
-        <ul class="action-list">
-          <li class="use-how-to">
-            USE: Choose an item to use on another item, prompted by the second input. Order is important here! For example, "USE key ON door".
-          </li>
-          <li class="inspect-how-to">
-            INSPECT: Choose an item to closely inspect. Certain items require inspection before they can be used or combined, and can sometimes 
-            reveal new items. For example: "INSPECT key". 
-          </li>
-          <li class="pickup-how-to">
-            PICK UP: Choose an item to pick up and place in your inventory. Items you pick up will be displayed in the ITEMS section. Certain items 
-            need to be picked up in order to be used or combined. For example: "PICK UP key". 
-          </li>
-          <li class="combine-how-to">
-            COMBINE: Choose two items to combine in order to create a new item. Although order is not important here, note that there is a
-            difference between combining items and using items. For example: "COMBINE door WITH doorknob". 
-          </li>
-        </ul>
-        <p>
-          You must obtain the element required by the door in order to escape. Use your surroundings to your advantage, and exercise your 
-          elemental knowledge! Good luck!
-        </p>
-      </div>
-
-      <button class="start-button">Start Game</button>
-
-      <button class="credits-button">Credits</button>
-    </div>
-
-    <div class="credits">
-      <p>This project was created for Mintbean's Learnathon #084, JS GameHacks: Web Escape</p>
-      <p>Created by: Chang Ho Lee</p>
-    </div>
-
-    <div class="game">
-      <div class="logs-container">
-        <ul class="logs">
-        </ul>
-      </div>
-
-      <div class="entry-container">
-        <select id="prefix">
-          <option value="use">USE</option>
-          <option value="inspect">INSPECT</option>
-          <option value="pickup">PICK UP</option>
-          <option value="combine">COMBINE</option>
-        </select>
-
-        <input type="text" id="entry">
-
-        <label for="use-entry">ON</label>
-        <input type="text" id="use-entry">
-
-        <label for="combine-entry">WITH</label>
-        <input type="text" id="combine-entry">
-      </div>
-
-      <div class="items-container">
-        <p class="items-header">ITEMS</p>
-        <ul class="items">
-          <li class="item item0"></li>
-          <li class="item item1"></li>
-          <li class="item item2"></li>
-          <li class="item item3"></li>
-          <li class="item item4"></li>
-          <li class="item item5"></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="win">
-
-    </div>
-  </div>
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style/default.css">
-  <link rel="stylesheet" href="style/game.css">
-  <title>Document</title>
+  <script src="//cdn.jsdelivr.net/npm/phaser@3.54.0/dist/phaser.min.js"></script>
+  <title>Elements Escape</title>
 </head>
 <body>
-  <div class="display">
-    <div class="game">
-      <div class="logs-container">
-        <ul class="logs">
-        </ul>
-      </div>
-
-      <div class="entry-container">
-        <select id="prefix">
-          <option value="use">USE</option>
-          <option value="inspect">INSPECT</option>
-          <option value="pickup">PICK UP</option>
-          <option value="combine">COMBINE</option>
-        </select>
-
-        <input type="text" id="entry">
-
-        <label for="use-entry">ON</label>
-        <input type="text" id="use-entry">
-
-        <label for="combine-entry">WITH</label>
-        <input type="text" id="combine-entry">
-      </div>
-
-      <div class="items-container">
-        <p class="items-header">ITEMS</p>
-        <ul class="items">
-          <li class="item item0"></li>
-          <li class="item item1"></li>
-          <li class="item item2"></li>
-          <li class="item item3"></li>
-          <li class="item item4"></li>
-          <li class="item item5"></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+  <h1>Elements Escape</h1>
+  <script type="module" src="src/main.js"></script>
 </body>
 </html>
