@@ -1,0 +1,22 @@
+{
+  "start": {
+    "text": "You wake up in an unfamiliar room. You have a splitting headache as you try to remember. You are a researcher for Atomial Labs. You and your team were conducting an experiment, but you can't remember anything beyond that. You begin to panic, your breaths getting shorter and shorter. You forcefully take a deep breath and calm down. Although you don't know anything about your situation, you do know one thing: You must escape."
+  },
+  "full vial": {
+    "name": "full vial",
+    "actions": {
+      "use": {
+        "scanner": {
+          "text": "You hear a beep from the scanner, followed by a loud thunk from the door. The door slowly swings open to reveal a pitch black room. You walk in as the door shuts behind you."
+        }
+      },
+      "inspect": "It's a vial filled with hydrogen gas."
+    }
+  },
+  "scanner": {
+    "name": "scanner",
+    "actions": {
+      "inspect": "It's an electronic scanner. It has a small circular slot where it seems a vial would fit."
+    }
+  }
+}

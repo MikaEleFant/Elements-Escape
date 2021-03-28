@@ -1,0 +1,55 @@
+.game {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto auto 50px;
+  width: 100%;
+  height: 100%;
+}
+
+.logs-container {
+  grid-column: 1 / 4;
+  grid-row: 1 / 4;
+  margin: 0;
+  border: ridge 3px gray;
+}
+
+.entry-container {
+  grid-column: 1 / 4;
+  grid-row: 4 / 5;
+  margin: 0;
+  border: ridge 3px gray;
+}
+
+.entry {
+  width: 99%;
+  height: 85%;
+}
+
+.entry:placeholder-shown {
+  font-style: italic;
+}
+
+.items-container {
+  grid-column: 4 / 5;
+  grid-row: 1 / 5;
+  border: ridge 3px gray;
+}
+
+.items-header {
+  margin: 20px;
+}
+
+.items {
+  display: block;
+  width: 100%;
+  height: 92%;
+}
+
+.item {
+  display: flex;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  height: 16%;
+  border-top: ridge 3px black; 
+}
