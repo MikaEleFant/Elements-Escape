@@ -27,4 +27,6 @@ entry.addEventListener("click", function(event) {
 entryButton.addEventListener("click", function(event) {
   event.preventDefault();
   game.start();
+  game.parseInput(entry.value);
+  entry.value = "";
 })

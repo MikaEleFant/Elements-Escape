@@ -1,8 +1,8 @@
 let level1 = {
-  full_vial: {
+  "full vial": {
     name: "full vial",
     actions: {
-      use: {
+      useOn: {
         scanner: {
           text: "You hear a beep from the scanner, followed by a loud thunk from the door. The door slowly swings open to reveal a pitch black room. You walk in as the door shuts behind you."
         }

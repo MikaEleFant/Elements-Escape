@@ -4,8 +4,12 @@ class Item {
     this.actions = actions;
   }
 
-  itemUse(itemName) {
-    return this.actions.use?.[itemName]?.();
+  itemUse() {
+    return this.actions.use?.();
+  }
+
+  itemUseOn(itemName) {
+    return this.actions.useOn?.[itemName]?.();
   }
 
   itemInspect() {

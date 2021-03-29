@@ -14,23 +14,21 @@
 .logs {
   display: flex;
   flex-direction: column;
-  height: 560px;
+  height: 555px;
+  width: 690px;
   list-style-type: none;
+  margin: 0;
   padding: 5px;
+  overflow-y: hidden;
 }
 
 .logs > li {
   margin-bottom: 10px;
   padding-bottom: 10px;
-  opacity: 1;
+  opacity: 0;
   border-bottom: solid 2px gray;
-  animation: fadeIn 2s;
+  transition: opacity 1s linear;
   text-align: left;
-}
-
-@keyframes fadeIn {
-  0% {opacity: 0}
-  100% {opacity: 1}
 }
 
 .logs > :first-child {

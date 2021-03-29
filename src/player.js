@@ -2,10 +2,22 @@ class Player {
   constructor() {
     this.inventory = [];
   }
+
+  use(obj) {
+    let used = obj.itemUse();
+    let firstSentence = "You use the " + obj.name + ".";
+
+    if (used) {
+      return firstSentence + used.text;
+    }
+    else {
+      return firstSentence + this.error("use");
+    }
+  }
   
-  use(obj1, obj2) {
-    let used = obj1.itemUse(obj2.name);
-    let firstSentence = "You use the " + obj1 + " on the " + obj2 + ".";
+  useOn(obj1, obj2) {
+    let used = obj1.itemUseOn(obj2.name);
+    let firstSentence = "You use the " + obj1.name + " on the " + obj2.name + ".";
     
     if (used) {
       return firstSentence + used.text;
@@ -17,7 +29,7 @@ class Player {
 
   inspect(obj) {
     let inspected = obj.itemInspect();
-    let firstSentence = "You inspect the " + obj + ".";
+    let firstSentence = "You inspect the " + obj.name + ".";
 
     if (inspected) {
       return firstSentence + inspected.text;
@@ -29,7 +41,7 @@ class Player {
 
   pickup(obj) {
     let pickedup = obj.itemPickup();
-    let firstSentence = "You pick up the " + obj + ".";
+    let firstSentence = "You pick up the " + obj.name + ".";
 
     if (pickedup) {
       return firstSentence + pickedup.text;
@@ -41,7 +53,7 @@ class Player {
 
   combine(obj1, obj2) {
     let combined = obj.itemCombine(obj2.name);
-    let firstSentence = "You combine the " + obj1 + " with the " + obj2 + ".";
+    let firstSentence = "You combine the " + obj1.name + " with the " + obj2.name + ".";
 
     if (combined) {
       return firstSentence + combined.text;
