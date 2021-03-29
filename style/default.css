@@ -7,10 +7,9 @@
 .display {
   display: block;
   margin: 20px auto;
-  width: 90vw;
-  height: 90vh;
+  width: 940px;
+  height: 620px;
   text-align: center;
-  border: ridge 3px gray;
 }
 
 .main-menu, .credits, .win {
