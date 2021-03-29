@@ -1,20 +1,12 @@
-// import Game from "./src/game.js";
-const levelURLs = ["./src/levels/level1.json"];
-let levels;
+import Game from "./src/game.js";
+import levelStartText from "./src/levels/levels_start.js";
+import level1Items from "./src/levels/level1.js";
 
-function getLevel(levelURL) {
-  return fetch(levelURL)
-    .then(response => {
-      return response.json();
-    })
-    .then(level => {
-      return Promise.resolve(level);
-    })
+let levelItems = [];
+levelItems.push(level1Items);
+console.log(levelItems[0]);
+let game = new Game(levelStartText, levelItems);
+
+function startGame() {
+  game.start();
 }
-
-Promise.all(
-  levelURLs.map(getLevel)
-).then((data) => {
-  levels = data;
-  console.log(levels);
-})

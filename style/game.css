@@ -21,8 +21,30 @@
 }
 
 .entry {
-  width: 99%;
+  float: left;
+  width: 90%;
   height: 85%;
+}
+
+.entry-button {
+  width: 9%;
+  height: 100%;
+}
+
+@media screen and (max-width: 1250px) {
+  .entry-button {
+    display: none;
+  }
+  .entry {
+    width: 99%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .entry {
+    float: none;
+    width: 96%;
+  }
 }
 
 .entry:placeholder-shown {

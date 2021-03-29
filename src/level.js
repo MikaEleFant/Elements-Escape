@@ -1,8 +1,11 @@
-import Item from "item.js";
+import Item from "./item.js";
 
-class Room {
-  constructor(items) {
-    this.items = items.forEach(item => new Item(item.name, item.actions));
+class Level {
+  constructor(itemsList) {
+    this.items = {};
+    for (let item in itemsList) {
+      this.items[item.name] = new Item(item.name, item.actions);
+    };
     this.foundItems = [];
   }
 
@@ -19,4 +22,4 @@ class Room {
   }
 }
 
-export default Room;
+export default Level;
