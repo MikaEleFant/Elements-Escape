@@ -1,5 +1,4 @@
 .game {
-  display: grid;
   grid-template-columns: 235px 235px 235px 235px;
   grid-template-rows: 190px 190px 190px 50px;
 }

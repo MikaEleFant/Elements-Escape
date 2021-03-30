@@ -63,7 +63,7 @@ class Player {
     }
   }
 
-  error(func, obj=null) {
+  error(func, obj) {
     if (func == "use") {
       return "Nothing happens."
     }

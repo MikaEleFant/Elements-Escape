@@ -1,22 +1,20 @@
 import Player from "./player.js";
-import Level from "./level.js";
 import Item from "./item.js";
 
 class Game {
-  constructor(levelStartArray, levelItems) {
+  constructor(levelStartArray, levelItems, totalLevels) {
     this.allLevelsItems = levelItems;
     this.allLevelsStart = levelStartArray;
     this.currentLevel = 0
     this.currentLevelStartText = this.allLevelsStart[this.currentLevel];
     this.currentLevelItems = levelItems[this.currentLevel];
-    this.cleared = false;
+    this.totalLevels = totalLevels;
 
     let itemObjs = {};
     for (let item in this.currentLevelItems) {
       itemObjs[item] = new Item(this.currentLevelItems[item].name, this.currentLevelItems[item].actions);
     }
     this.currentLevelItems = itemObjs;
-    this.level = new Level(this.currentLevelItems);
     this.player = new Player();
   }
 
@@ -35,6 +33,7 @@ class Game {
       let item2 = this.currentLevelItems[item2Name];
 
       resultText = this.player.useOn(item1, item2);
+      this.isLevelCleared(item2Name, !(resultText.includes("Nothing happened.")));
     }
     else if (inputWords.includes("with")) {
       let withIdx = inputWords.indexOf("with");
@@ -94,8 +93,26 @@ class Game {
     }
   }
 
-  update() {
+  isGameCleared() {
+    this.currentLevel == this.totalLevels;
+  }
 
+  isLevelCleared(itemName, opened) {
+    if (opened && itemName == "scanner") {
+      if (this.isGameCleared()) {
+        
+      }
+      else {
+        this.nextLevel();
+      }
+    }
+  }
+
+  nextLevel() {
+    this.currentLevel += 1;
+    this.currentLevelStartText = this.allLevelsStart[this.currentLevel];
+    this.currentLevelItems = levelItems[this.currentLevel];
+    this.start();
   }
 }
 

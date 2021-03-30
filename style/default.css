@@ -10,8 +10,9 @@
   width: 940px;
   height: 620px;
   text-align: center;
+  border: solid 2px gray;
 }
 
-.main-menu, .credits, .win {
+.game, .instructions, .credits, .win {
   display: none;
 }

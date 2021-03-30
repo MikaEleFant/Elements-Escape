@@ -14,53 +14,50 @@
 <body>
   <div class="display">
     <div class="main-menu">
-      <div class="title">Elements Escape</div>
-      <div class="subtitle">A text-based escape game based on the elements!</div>
-      <div class="instructions">
-        <div class="instructions-page-1">
-          <p>Your Objectives:</p>
-          <p>Each door has a number imprinted on it, and a scanner next to it.</p>
-          <p>This number corresponds to an element on the Periodic Table.</p>
-          <p>You must scan the element required by the door in order to escape.</p> 
-          <p>If the element requires a container, the scanner will have a groove in the shape of the container required.</p> 
-          <p>Use your surroundings to your advantage, and exercise your elemental knowledge! Good luck!</p>
-
-          <button type="button" class="instructions-next">Next Page</button>
-        </div>
-
-        <div clas="instructions-page-2">
-          <p>How To Play:</p>
-          <p>Type in your next action in the input box. Make sure to format your input correctly as shown:</p>
-          <ul class="action-list">
-            <li class="use-how-to">
-              USE: Choose an item to use on another item, prompted by the second input. Order is important here! For example, "USE key ON door".
-            </li>
-            <li class="inspect-how-to">
-              INSPECT: Choose an item to closely inspect. Certain items require inspection before they can be used or combined, and can sometimes 
-              reveal new items. For example: "INSPECT key". 
-            </li>
-            <li class="pickup-how-to">
-              PICK UP: Choose an item to pick up and place in your inventory. Items you pick up will be displayed in the ITEMS section. Certain items 
-              need to be picked up in order to be used or combined. For example: "PICKUP key". 
-            </li>
-            <li class="combine-how-to">
-              COMBINE: Choose two items to combine in order to create a new item. Although order is not important here, note that there is a
-              difference between combining items and using items. For example: "COMBINE door WITH doorknob". 
-            </li>
-          </ul>
-
-          <button type="button" class="instructions-prev">Prev Page</button>
-        </div>
+      <div class="title"><h1>Elements Escape</h1></div>
+      <div class="subtitle"><h2>A text-based escape game based on the elements!</h2></div>
+      <div class="objective">
+        <h1>Your Objective:</h1>
+        <p>Each door has a number imprinted on it, and a scanner next to it.</p>
+        <p>This number corresponds to an element on the Periodic Table.</p>
+        <p>You must scan the element required by the door in order to escape.</p> 
+        <p>If the element requires a container, the scanner will have a groove in the shape of the container required.</p> 
+        <p>Use your surroundings to your advantage, and exercise your elemental knowledge! Good luck!</p>
       </div>
 
-      <button class="start-button">Start Game</button>
+      <button type="button" class="start-button">Start Game</button>
+      <button type="button" class="instructions-button">How To Play</button>
+      <button type="button" class="credits-button">Credits</button>
+    </div>
 
-      <button class="credits-button">Credits</button>
+    <div class="instructions">
+      <h1>How To Play:</h1>
+      <p>Type in your next action in the input box. Make sure to format your input correctly as shown:</p>
+      <ul class="action-list">
+        <li class="use-how-to">
+          USE: Choose an item to use. For example: "USE lighter". If you wish to use an item on another item, follow it up with the "on" keyword. For example: "USE key ON door". Order is important here!
+        </li>
+        <li class="inspect-how-to">
+          INSPECT: Choose an item to closely inspect. Certain items require inspection before they can be used or combined, and can sometimes 
+          reveal new items. For example: "INSPECT key".
+        </li>
+        <li class="pickup-how-to">
+          PICK UP: Choose an item to pick up and place in your inventory. Items you pick up will be displayed in the ITEMS section. Certain items 
+          need to be picked up in order to be used or combined. For example: "PICKUP key". 
+        </li>
+        <li class="combine-how-to">
+          COMBINE: Choose two items to combine in order to create a new item. Although order is not important here, note that there is a
+          difference between combining items and using items. For example: "COMBINE door WITH doorknob". 
+        </li>
+      </ul>
+
+      <button type="button" class="main-menu-button">Back to Menu</button>
     </div>
 
     <div class="credits">
       <p>This project was created for Mintbean's Learnathon #084, JS GameHacks: Web Escape</p>
       <p>Created by: Chang Ho Lee</p>
+      <button type="button" class="main-menu-button">Back to Menu</button>
     </div>
 
     <div class="game">
@@ -87,7 +84,7 @@
     </div>
 
     <div class="win">
-
+      
     </div>
   </div>
 </body>
