@@ -2,10 +2,7 @@ import Item from "./item.js";
 
 class Level {
   constructor(itemsList) {
-    this.items = {};
-    for (let item in itemsList) {
-      this.items[item.name] = new Item(item.name, item.actions);
-    };
+    this.items = itemsList;
     this.foundItems = [];
   }
 

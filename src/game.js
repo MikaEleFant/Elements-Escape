@@ -13,7 +13,7 @@ class Game {
 
     let itemObjs = {};
     for (let item in this.currentLevelItems) {
-      itemObjs[item] = new Item(item, this.currentLevelItems[item].actions);
+      itemObjs[item] = new Item(this.currentLevelItems[item].name, this.currentLevelItems[item].actions);
     }
     this.currentLevelItems = itemObjs;
     this.level = new Level(this.currentLevelItems);
@@ -27,14 +27,12 @@ class Game {
   parseInput(input) {
     let [actionWord, ...inputWords] = input.split(" ");
     let resultText;
-    console.log(this.currentLevelItems);
     if (inputWords.includes("on")) {
       let onIdx = inputWords.indexOf("on");
       let item1Name = inputWords.slice(0, onIdx).join("");
       let item1 = this.currentLevelItems[item1Name];
       let item2Name = inputWords.slice(onIdx + 1).join("");
       let item2 = this.currentLevelItems[item2Name];
-      console.log(item1, item2);
 
       resultText = this.player.useOn(item1, item2);
     }

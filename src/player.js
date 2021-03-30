@@ -5,10 +5,10 @@ class Player {
 
   use(obj) {
     let used = obj.itemUse();
-    let firstSentence = "You use the " + obj.name + ".";
+    let firstSentence = "You use the " + obj.printedName + ". ";
 
     if (used) {
-      return firstSentence + used.text;
+      return firstSentence + used;
     }
     else {
       return firstSentence + this.error("use");
@@ -17,10 +17,10 @@ class Player {
   
   useOn(obj1, obj2) {
     let used = obj1.itemUseOn(obj2.name);
-    let firstSentence = "You use the " + obj1.name + " on the " + obj2.name + ".";
+    let firstSentence = "You use the " + obj1.printedName + " on the " + obj2.printedName + ". ";
     
     if (used) {
-      return firstSentence + used.text;
+      return firstSentence + used;
     }
     else {
       return firstSentence + this.error("use");
@@ -29,10 +29,10 @@ class Player {
 
   inspect(obj) {
     let inspected = obj.itemInspect();
-    let firstSentence = "You inspect the " + obj.name + ".";
+    let firstSentence = "You inspect the " + obj.printedName + ". ";
 
     if (inspected) {
-      return firstSentence + inspected.text;
+      return firstSentence + inspected;
     }
     else {
       return firstSentence + this.error("inspect");
@@ -41,10 +41,10 @@ class Player {
 
   pickup(obj) {
     let pickedup = obj.itemPickup();
-    let firstSentence = "You pick up the " + obj.name + ".";
+    let firstSentence = "You pick up the " + obj.printedName + ". ";
 
     if (pickedup) {
-      return firstSentence + pickedup.text;
+      return firstSentence + pickedup;
     }
     else {
       return firstSentence + this.error("pickup");
@@ -53,10 +53,10 @@ class Player {
 
   combine(obj1, obj2) {
     let combined = obj.itemCombine(obj2.name);
-    let firstSentence = "You combine the " + obj1.name + " with the " + obj2.name + ".";
+    let firstSentence = "You combine the " + obj1.printedName + " with the " + obj2.printedName + ". ";
 
     if (combined) {
-      return firstSentence + combined.text;
+      return firstSentence + combined;
     }
     else {
       return firstSentence + this.error("combine");

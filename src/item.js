@@ -1,28 +1,28 @@
 class Item {
-  constructor(name, actions) {
-    this.name = name;
+  constructor(nameStr, actions) {
+    this.name = nameStr.split(" ").join("");
+    this.printedName = nameStr;
     this.actions = actions;
   }
 
   itemUse() {
-    return this.actions.use?.();
+    return this.actions.use ?? false;
   }
 
   itemUseOn(itemName) {
-    console.log(this.actions.useOn?.()); //error here
-    return this.actions.useOn?.itemName?.();
+    return this.actions.useOn?.[itemName];
   }
 
   itemInspect() {
-    return this.actions.inspect?.();
+    return this.actions.inspect ?? false;
   }
 
   itemPickup() {
-    return this.actions.pickup?.();
+    return this.actions.pickup ?? false;
   }
 
   itemCombine(itemName) {
-    return this.actions.combine?.itemName?.();
+    return this.actions.combine?.[itemName];
   }
 }
 
