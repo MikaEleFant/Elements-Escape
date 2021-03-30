@@ -1,5 +1,5 @@
 let level1 = {
-  "full vial": {
+  fullvial: {
     name: "full vial",
     actions: {
       useOn: {

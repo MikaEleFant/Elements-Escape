@@ -17,32 +17,40 @@
       <div class="title">Elements Escape</div>
       <div class="subtitle">A text-based escape game based on the elements!</div>
       <div class="instructions">
-        <p>How To Play:</p>
-        <p>Type in your next action in the input box. Make sure to format your input correctly as shown:</p>
-        <ul class="action-list">
-          <li class="use-how-to">
-            USE: Choose an item to use on another item, prompted by the second input. Order is important here! For example, "USE key ON door".
-          </li>
-          <li class="inspect-how-to">
-            INSPECT: Choose an item to closely inspect. Certain items require inspection before they can be used or combined, and can sometimes 
-            reveal new items. For example: "INSPECT key". 
-          </li>
-          <li class="pickup-how-to">
-            PICK UP: Choose an item to pick up and place in your inventory. Items you pick up will be displayed in the ITEMS section. Certain items 
-            need to be picked up in order to be used or combined. For example: "PICKUP key". 
-          </li>
-          <li class="combine-how-to">
-            COMBINE: Choose two items to combine in order to create a new item. Although order is not important here, note that there is a
-            difference between combining items and using items. For example: "COMBINE door WITH doorknob". 
-          </li>
-        </ul>
-        <p>
-          Each door has a number imprinted on it, and a scanner next to it. 
-          This number corresponds to an element on the Periodic Table.
-          You must scan the element required by the door in order to escape. 
-          If the element requires a container, the scanner will have a groove in the shape of the container required. 
-          Use your surroundings to your advantage, and exercise your elemental knowledge! Good luck!
-        </p>
+        <div class="instructions-page-1">
+          <p>Your Objectives:</p>
+          <p>Each door has a number imprinted on it, and a scanner next to it.</p>
+          <p>This number corresponds to an element on the Periodic Table.</p>
+          <p>You must scan the element required by the door in order to escape.</p> 
+          <p>If the element requires a container, the scanner will have a groove in the shape of the container required.</p> 
+          <p>Use your surroundings to your advantage, and exercise your elemental knowledge! Good luck!</p>
+
+          <button type="button" class="instructions-next">Next Page</button>
+        </div>
+
+        <div clas="instructions-page-2">
+          <p>How To Play:</p>
+          <p>Type in your next action in the input box. Make sure to format your input correctly as shown:</p>
+          <ul class="action-list">
+            <li class="use-how-to">
+              USE: Choose an item to use on another item, prompted by the second input. Order is important here! For example, "USE key ON door".
+            </li>
+            <li class="inspect-how-to">
+              INSPECT: Choose an item to closely inspect. Certain items require inspection before they can be used or combined, and can sometimes 
+              reveal new items. For example: "INSPECT key". 
+            </li>
+            <li class="pickup-how-to">
+              PICK UP: Choose an item to pick up and place in your inventory. Items you pick up will be displayed in the ITEMS section. Certain items 
+              need to be picked up in order to be used or combined. For example: "PICKUP key". 
+            </li>
+            <li class="combine-how-to">
+              COMBINE: Choose two items to combine in order to create a new item. Although order is not important here, note that there is a
+              difference between combining items and using items. For example: "COMBINE door WITH doorknob". 
+            </li>
+          </ul>
+
+          <button type="button" class="instructions-prev">Prev Page</button>
+        </div>
       </div>
 
       <button class="start-button">Start Game</button>

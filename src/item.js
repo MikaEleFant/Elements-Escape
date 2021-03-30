@@ -9,7 +9,8 @@ class Item {
   }
 
   itemUseOn(itemName) {
-    return this.actions.useOn?.[itemName]?.();
+    console.log(this.actions.useOn?.()); //error here
+    return this.actions.useOn?.itemName?.();
   }
 
   itemInspect() {
@@ -21,7 +22,7 @@ class Item {
   }
 
   itemCombine(itemName) {
-    return this.actions.combine?.[itemName]?.();
+    return this.actions.combine?.itemName?.();
   }
 }
 

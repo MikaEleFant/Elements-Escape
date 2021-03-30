@@ -1,5 +1,6 @@
 import Player from "./player.js";
 import Level from "./level.js";
+import Item from "./item.js";
 
 class Game {
   constructor(levelStartArray, levelItems) {
@@ -10,6 +11,11 @@ class Game {
     this.currentLevelItems = levelItems[this.currentLevel];
     this.cleared = false;
 
+    let itemObjs = {};
+    for (let item in this.currentLevelItems) {
+      itemObjs[item] = new Item(item, this.currentLevelItems[item].actions);
+    }
+    this.currentLevelItems = itemObjs;
     this.level = new Level(this.currentLevelItems);
     this.player = new Player();
   }
@@ -21,11 +27,12 @@ class Game {
   parseInput(input) {
     let [actionWord, ...inputWords] = input.split(" ");
     let resultText;
+    console.log(this.currentLevelItems);
     if (inputWords.includes("on")) {
       let onIdx = inputWords.indexOf("on");
-      let item1Name = inputWords.slice(0, onIdx).join(" ");
+      let item1Name = inputWords.slice(0, onIdx).join("");
       let item1 = this.currentLevelItems[item1Name];
-      let item2Name = inputWords.slice(onIdx + 1).join(" ");
+      let item2Name = inputWords.slice(onIdx + 1).join("");
       let item2 = this.currentLevelItems[item2Name];
       console.log(item1, item2);
 
@@ -33,15 +40,15 @@ class Game {
     }
     else if (inputWords.includes("with")) {
       let withIdx = inputWords.indexOf("with");
-      let item1Name = inputWords.slice(0, withIdx - 1).join(" ");
+      let item1Name = inputWords.slice(0, withIdx - 1).join("");
       let item1 = this.currentLevelItems[item1Name];
-      let item2Name = inputWords.slice(withIdx + 1).join(" ");
+      let item2Name = inputWords.slice(withIdx + 1).join("");
       let item2 = this.currentLevelItems[item2Name];
 
       resultText = this.player.combine(item1, item2);
     }
     else {
-      let itemName = inputWords.join(" ");
+      let itemName = inputWords.join("");
       let item = this.currentLevelItems[itemName];
       if (actionWord == "use") {
         resultText = this.player.use(item);
@@ -51,7 +58,7 @@ class Game {
       }
       else if (actionWord == "pick") {
         if (inputWords[0] == "up") {
-          itemName = inputWords.slice(1).join(" ");
+          itemName = inputWords.slice(1).join("");
           item = this.currentLevelItems[itemName];
 
           resultText = this.player.pickup(item);
