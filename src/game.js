@@ -25,7 +25,11 @@ class Game {
   parseInput(input) {
     let [actionWord, ...inputWords] = input.split(" ");
     let resultText;
-    if (inputWords.includes("on")) {
+
+    if (!["use", "inspect", "pick", "combine"].includes(actionWord)) {
+      resultText = "Invalid action detected. Use one of the four actions: USE, INSPECT, PICK UP, or COMBINE."
+    }
+    else if (inputWords.includes("on")) {
       let onIdx = inputWords.indexOf("on");
       let item1Name = inputWords.slice(0, onIdx).join("");
       let item2Name = inputWords.slice(onIdx + 1).join("");
@@ -63,10 +67,7 @@ class Game {
     else {
       let itemName = inputWords.join("");
       let item = this.currentLevelItems[itemName];
-      if (!item) {
-        resultText = this.noItemText(itemName);
-      }
-      else if (actionWord == "use") {
+      if (actionWord == "use") {
         resultText = this.player.use(item);
       }
       else if (actionWord == "inspect") {
@@ -81,7 +82,7 @@ class Game {
         }
       }
       else {
-        resultText = "Invalid action detected. Use one of the four actions: USE, INSPECT, PICK UP, or COMBINE."
+        resultText = this.noItemText(itemName);
       }
     }
 

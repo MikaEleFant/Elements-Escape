@@ -13,6 +13,12 @@ let level1 = {
     actions: {
       inspect: "It's an electronic scanner. It has a small circular slot where it seems a vial would fit."
     }
+  },
+  room: {
+    name: "room",
+    actions: {
+      inspect: "You look around the room. There is a solid metal door in front of you with an electronic scanner next to it."
+    }
   }
 }
 

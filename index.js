@@ -59,6 +59,6 @@ entry.addEventListener("click", function(event) {
 
 entryButton.addEventListener("click", function(event) {
   event.preventDefault();
-  game.parseInput(entry.value);
+  game.parseInput(entry.value.toLowerCase());
   entry.value = "";
 })

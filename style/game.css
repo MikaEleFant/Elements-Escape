@@ -45,6 +45,9 @@
   float: left;
   width: 640px;
   height: 85%;
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
 }
 
 .entry-button {

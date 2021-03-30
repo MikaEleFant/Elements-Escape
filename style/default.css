@@ -1,7 +1,6 @@
-@media screen and (max-width: 450px) {
-  html {
-    font-size: 4vw;
-  }
+html {
+  background-color: black;
+  color: white;
 }
 
 .display {
