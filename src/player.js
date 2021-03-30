@@ -63,7 +63,7 @@ class Player {
     }
   }
 
-  error(func, obj) {
+  error(func) {
     if (func == "use") {
       return "Nothing happens."
     }
@@ -75,9 +75,6 @@ class Player {
     }
     else if (func == "combine") {
       return "You feel an embarassing sense of stupidity and quickly separate them."
-    }
-    else {
-      return "You quickly realize there is no " + obj + " to interact with."
     }
   }
 }

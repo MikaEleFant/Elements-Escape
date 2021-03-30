@@ -28,12 +28,20 @@ class Game {
     if (inputWords.includes("on")) {
       let onIdx = inputWords.indexOf("on");
       let item1Name = inputWords.slice(0, onIdx).join("");
-      let item1 = this.currentLevelItems[item1Name];
       let item2Name = inputWords.slice(onIdx + 1).join("");
+      let item1 = this.currentLevelItems[item1Name];
       let item2 = this.currentLevelItems[item2Name];
 
-      resultText = this.player.useOn(item1, item2);
-      this.isLevelCleared(item2Name, !(resultText.includes("Nothing happened.")));
+      if (!!item1 && !!item2) {
+        resultText = this.player.useOn(item1, item2);
+        this.isLevelCleared(item2Name, !(resultText.includes("Nothing happened.")));
+      }
+      else if (!!item1) {
+        resultText = this.noItemText(item2Name);
+      }
+      else {
+        resultText = this.noItemText(item1Name);
+      }
     }
     else if (inputWords.includes("with")) {
       let withIdx = inputWords.indexOf("with");
@@ -42,12 +50,23 @@ class Game {
       let item2Name = inputWords.slice(withIdx + 1).join("");
       let item2 = this.currentLevelItems[item2Name];
 
-      resultText = this.player.combine(item1, item2);
+      if (!!item1 && !!item2) {
+        resultText = this.player.combine(item1, item2);
+      }
+      else if (!!item1) {
+        resultText = this.noItemText(item2Name);
+      }
+      else {
+        resultText = this.noItemText(item1Name);
+      }
     }
     else {
       let itemName = inputWords.join("");
       let item = this.currentLevelItems[itemName];
-      if (actionWord == "use") {
+      if (!item) {
+        resultText = this.noItemText(itemName);
+      }
+      else if (actionWord == "use") {
         resultText = this.player.use(item);
       }
       else if (actionWord == "inspect") {
@@ -67,6 +86,10 @@ class Game {
     }
 
     this.printText(resultText);
+  }
+
+  noItemText(itemName) {
+    return "There is no " + itemName + " to interact with.";
   }
 
   printText(text) {
