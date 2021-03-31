@@ -15,3 +15,7 @@ html {
 .game, .instructions, .credits, .win {
   display: none;
 }
+
+b {
+  color: aqua;
+}

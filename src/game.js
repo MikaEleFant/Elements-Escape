@@ -100,9 +100,8 @@ class Game {
   printText(text) {
     let logs = document.querySelector("ul.logs");
     let liElement = document.createElement("li");
-    let textNode = document.createTextNode(text);
+    liElement.innerHTML = text;
   
-    liElement.appendChild(textNode);
     logs.appendChild(liElement);
     setTimeout(function(){logs.lastElementChild.style.opacity = "1";}, 100);
 

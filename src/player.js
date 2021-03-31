@@ -82,7 +82,7 @@ class Player {
       return this.error(obj2.name)
     }
 
-    let combined = obj.itemCombine(obj2.name);
+    let combined = obj1.itemCombine(obj2.name) ?? obj2.itemCombine(obj1.name);
     let firstSentence = "You combine the " + obj1.printedName + " with the " + obj2.printedName + ". ";
 
     if (combined) {
