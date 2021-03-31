@@ -24,7 +24,7 @@ let level1 = {
   room: {
     name: "room",
     actions: {
-      inspect: "There is a solid metal <b>door</b> in front of you with an electronic <b>scanner</b> next to it. To your right, there is a small wooden <b>desk</b>. There is an <b>empty vial</b> made of glass on the ground behind you."
+      inspect: "There is a solid metal <b>door</b> in front of you with an electronic <b>scanner</b> next to it. To your right, there is a small wooden <b>desk</b>. To your left is a dirty <b>sink</b>. There is an <b>empty vial</b> made of glass on the ground behind you."
     }
   },
   emptyvial: {
@@ -113,6 +113,7 @@ let level1 = {
   scissors: {
     name: "scissors",
     actions: {
+      pickup: " ",
       inspect: "A pair of dusty scissors. It's seen better days, but it can still most likely cut things.",
       useOn: {
         lamp: "Although the scissors were blunt and squeaky, after much effort, you manage to cut the <b>wires</b> off from the lamp. You trim the edges so that they each have an inch of exposed copper on each end."

@@ -3,6 +3,10 @@ class Player {
     this.inventory = [];
   }
 
+  isInventoryFull() {
+    return this.inventory.length == 6;
+  }
+
   checkInventory(obj) {
     this.inventory.includes(obj);
   }
@@ -64,6 +68,10 @@ class Player {
   pickup(obj) {
     let pickedup = obj.itemPickup();
     let firstSentence = "You pick up the " + obj.printedName + ". ";
+
+    if (this.isInventoryFull()) {
+      return "You try to pick up the " + obj.printedName + ", but you realize your inventory is full.";
+    }
 
     if (pickedup) {
       this.addInventory(obj);
