@@ -55,15 +55,9 @@ entry.addEventListener("keyup", function(event) {
   }
 })
 
-entry.addEventListener("click", function(event) {
-  event.preventDefault();
-  if (event.detail === 3) {
-    entryButton.click();
-  }
-})
-
 entryButton.addEventListener("click", function(event) {
   event.preventDefault();
   game.parseInput(entry.value.toLowerCase());
   entry.value = "";
 })
+

@@ -1,0 +1,12 @@
+.start-button, .instructions-button, .credits-button, .main-menu-button:not(.in-game) {
+  height: 30px;
+  width: 120px;
+}
+
+.objective {
+  margin: 0 auto;
+  padding: 20px;
+  justify-self: center;
+  width: 700px;
+  margin-bottom: 30px;
+}

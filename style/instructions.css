@@ -1,0 +1,8 @@
+.action-list {
+  list-style-type: none;
+  padding: 25px;
+}
+
+.action-list li {
+  padding: 10px;
+}

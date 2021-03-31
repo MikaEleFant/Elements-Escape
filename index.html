@@ -6,10 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link href='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css?family=Syne+Mono" rel="stylesheet">
   <link rel="stylesheet" href="style/default.css">
+  <link rel="stylesheet" href="style/mainmenu.css">
+  <link rel="stylesheet" href="style/instructions.css">
   <link rel="stylesheet" href="style/game.css">
 
   <script type="module" src="index.js"></script>
+  <script src="src/test.js"></script>
   <title>Elements Escape</title>
 </head>
 <body>
@@ -18,16 +22,17 @@
       <div class="title"><h1>Elements Escape</h1></div>
       <div class="subtitle"><h2>A text-based escape game based on the elements!</h2></div>
       <div class="objective">
-        <h1>Your Objective:</h1>
+        <h3>Objective:</h3>
         <p>Each door has a number imprinted on it, and a scanner next to it.</p>
         <p>This number corresponds to an element on the Periodic Table.</p>
         <p>You must scan the element required by the door in order to escape.</p> 
         <p>If the element requires a container, the scanner will have a groove in the shape of the container required.</p> 
-        <p>Use your surroundings to your advantage, and exercise your elemental knowledge! Good luck!</p>
+        <p>Use your surroundings to your advantage, and exercise your elemental knowledge!</p>
+        <p>Good luck!</p>
       </div>
 
-      <button type="button" class="start-button">Start Game</button>
-      <button type="button" class="instructions-button">How To Play</button>
+      <button type="button" class="start-button">Start Game</button><br/>
+      <button type="button" class="instructions-button">How To Play</button><br/>
       <button type="button" class="credits-button">Credits</button>
     </div>
 
@@ -36,37 +41,46 @@
       <p>Type in your next action in the input box. Make sure to format your input correctly as shown:</p>
       <ul class="action-list">
         <li class="use-how-to">
-          USE: Choose an item to use. For example: "USE lighter". If you wish to use an item on another item, follow it up with the "on" keyword. 
+          <b>USE</b>: Choose an item to use. For example: "USE lighter". If you wish to use an item on another item, follow it up with the "on" keyword. 
           For example: "USE key ON door". Order is important here! 
           Although you may only use an item in your inventory, you can use an inventory item on an object not within your inventory.
         </li>
         <li class="inspect-how-to">
-          INSPECT: Choose an item to closely inspect. Certain items require inspection before they can be used or combined, and can sometimes 
+          <b>INSPECT</b>: Choose an item to closely inspect. Certain items require inspection before they can be used or combined, and can sometimes 
           reveal new items. For example: "INSPECT key".
         </li>
         <li class="pickup-how-to">
-          PICK UP: Choose an item to pick up and place in your inventory. Items you pick up will be displayed in the ITEMS section. Items 
+          <b>PICK UP</b>: Choose an item to pick up and place in your inventory. Items you pick up will be displayed in the ITEMS section. Items 
           need to be picked up in order to be used or combined. For example: "PICK UP key". 
         </li>
         <li class="combine-how-to">
-          COMBINE: Choose two items to combine in order to create a new item. Although order is not important here, note that there is a
+          <b>COMBINE</b>: Choose two items to combine in order to create a new item. Although order is not important here, note that there is a
           difference between combining items and using items. For example: "COMBINE door WITH doorknob". Remember, both items must be within
           your inventory in order to combine them!
         </li>
       </ul>
 
-      <p>That's it! Enjoy the game! HINT: You will need to PICK UP items after you USE or COMBINE them!</p>
+      <p>That's it! Enjoy the game! <b>HINT: You will need to PICK UP items after you USE or COMBINE them!</b></p>
 
       <button type="button" class="main-menu-button">Back to Menu</button>
     </div>
 
     <div class="credits">
-      <p>This project was created for Mintbean's Learnathon #084, JS GameHacks: Web Escape</p>
-      <p>Created by: Chang Ho Lee</p>
+      <p>This project was created for Mintbean's Learnathon #084, JS GameHacks: Web Escape!</p>
+      <p>Mintbean is an awesome community for developers of all shapes and sizes! If you love coding, check out the <a href="https://www.mintbean.io/" target="_blank">Mintbean Homepage</a> here!</p>
+      <h3>Meet The Team!</h3>
+      <p>Chang Ho Lee</p>
+      <p>Yep! It's just me here! Another introverted developer plugging away in his goblin cave TT_TT</p>
+      <p>Feel free to reach out if you have any comments, suggestions, or just want to hang out and code!</p>
 
       <p><a href="https://www.linkedin.com/in/chang-ho-lee-72b96a19a/" target="_blank"><i class="devicon-linkedin-plain contact-icon"></i></a></p>
       <p><a href="https://github.com/MikaEleFant/" target="_blank"><i class="devicon-github-plain contact-icon"></i></a></p>
       <p><a href="https://mikaelefant.netlify.app/" target="_blank">Website</a></p>
+
+      <p>Technologies used:</p>
+      <p><i class="skills-icon devicon devicon-javascript-plain"></i></p>
+      <p><i class="skills-icon devicon devicon-html5-plain-wordmark"></i></p>
+      <p><i class="skills-icon devicon devicon-css3-plain-wordmark"></i></p>
 
       <button type="button" class="main-menu-button">Back to Menu</button>
     </div>
@@ -81,7 +95,7 @@
         <input type="text" class="entry" placeholder="Type your action here..."><button type="button" class="entry-button">Enter</button>
       </div>
 
-      <button type="button" class="in-game main-menu-button">Back to Menu</button>
+      <button type="button" class="in-game main-menu-button">Quit Game</button>
 
       <div class="items-container">
         <p class="items-header">ITEMS</p>
@@ -100,7 +114,8 @@
       <h1>To be continued...</h1>
 
       <h3>Hi! Thanks for playing my game!</h3>
-      <p>If you enjoyed this, share it with your friends!</p>
+      <p>If you enjoyed this, please share it with your friends!</p>
+      <p>Make sure to check out <a href="https://www.mintbean.io/" target="_blank">Mintbean</a> as well! Huge thanks to them & their community for all the support!</p>
 
       <p><a href="https://www.linkedin.com/in/chang-ho-lee-72b96a19a/" target="_blank"><i class="devicon-linkedin-plain contact-icon"></i></a></p>
       <p><a href="https://github.com/MikaEleFant/" target="_blank"><i class="devicon-github-plain contact-icon"></i></a></p>

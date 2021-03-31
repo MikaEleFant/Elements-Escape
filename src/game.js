@@ -39,7 +39,7 @@ class Game {
 
       if (!!item1 && !!item2) {
         resultText = this.player.useOn(item1, item2);
-        this.isLevelCleared(item2Name, !(resultText.includes("Nothing happened.")));
+        this.isLevelCleared(item2Name, resultText);
       }
       else if (!!item1) {
         resultText = this.noItemText(item2Name);
@@ -115,7 +115,7 @@ class Game {
       liTotalHeight += liS[i].offsetHeight;
     }
     
-    if (liTotalHeight >= logs.offsetHeight - 40) {
+    if (liTotalHeight >= logs.offsetHeight - 100) {
       logs.removeChild(logs.firstElementChild);
     }
   }
@@ -140,14 +140,16 @@ class Game {
     return this.currentLevel == this.totalLevels - 1;
   }
 
-  isLevelCleared(itemName, opened) {
-    if (opened && itemName == "scanner") {
-      if (this.isGameCleared()) {
-        setTimeout(function(){document.querySelector("div.game").style.display = "none"}, 3000);
-        setTimeout(function(){document.querySelector("div.win").style.display = "block"}, 3000);
-      }
-      else {
-        this.nextLevel();
+  isLevelCleared(itemName, resultText) {
+    if (itemName == "scanner") {
+      if (!(resultText.includes("You do not have a") || resultText.includes("Nothing happens"))) {
+        if (this.isGameCleared()) {
+          setTimeout(function(){document.querySelector("div.game").style.display = "none"}, 3000);
+          setTimeout(function(){document.querySelector("div.win").style.display = "block"}, 3000);
+        }
+        else {
+          this.nextLevel();
+        }
       }
     }
   }

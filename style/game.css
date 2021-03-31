@@ -7,7 +7,7 @@
   grid-column: 1 / 4;
   grid-row: 1 / 4;
   margin: 0;
-  border: ridge 3px gray;
+  border: ridge 3px aqua;
 }
 
 .logs {
@@ -38,7 +38,7 @@
   grid-column: 1 / 4;
   grid-row: 4 / 5;
   margin: 0;
-  border: ridge 3px gray;
+  border: ridge 3px aqua;
 }
 
 .entry {
@@ -68,7 +68,7 @@
 .items-container {
   grid-column: 4 / 5;
   grid-row: 2 / 5;
-  border: ridge 3px gray;
+  border: ridge 3px aqua;
 }
 
 .items {

@@ -1,6 +1,18 @@
 html {
   background-color: black;
   color: white;
+  font-family: "Syne Mono";
+}
+
+button {
+  font-family: "Syne Mono";
+}
+
+button:hover {
+  cursor: pointer;
+  border: solid 1px white;
+  background-color: black;
+  color: white;
 }
 
 .display {
@@ -9,7 +21,7 @@ html {
   width: 940px;
   height: 620px;
   text-align: center;
-  border: solid 2px gray;
+  border: solid 2px aqua;
 }
 
 .game, .instructions, .credits, .win {

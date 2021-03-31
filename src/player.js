@@ -21,7 +21,7 @@ class Player {
 
   use(obj) {
     if (!this.checkInventory(obj)) {
-      return this.error(obj.name)
+      return this.error(obj.printedName)
     }
 
     let used = obj.itemUse();
@@ -38,7 +38,7 @@ class Player {
   
   useOn(obj1, obj2) {
     if (!this.checkInventory(obj1)) {
-      return this.error(obj1.name)
+      return this.error(obj1.printedName);
     }
 
     let used = obj1.itemUseOn(obj2.name);
@@ -84,10 +84,10 @@ class Player {
 
   combine(obj1, obj2) {
     if (!this.checkInventory(obj1)) {
-      return this.error(obj1.name)
+      return this.error(obj1.printedName)
     }
     if (!this.checkInventory(obj2)) {
-      return this.error(obj2.name)
+      return this.error(obj2.printedName)
     }
 
     let combined = obj1.itemCombine(obj2.name) ?? obj2.itemCombine(obj1.name);
@@ -103,11 +103,8 @@ class Player {
     }
   }
 
-  error(func=null, obj=null) {
-    if (!func) {
-      return "You do not have a " + obj;
-    }
-    else if (func == "use") {
+  error(func) {
+    if (func == "use") {
       return "Nothing happens."
     }
     else if (func == "inspect") {
@@ -118,6 +115,9 @@ class Player {
     }
     else if (func == "combine") {
       return "You feel an embarassing sense of stupidity and quickly separate them."
+    }
+    else {
+      return "You do not have a " + func + ".";
     }
   }
 }
