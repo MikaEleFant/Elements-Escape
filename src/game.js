@@ -144,6 +144,7 @@ class Game {
     if (itemName == "scanner") {
       if (!(resultText.includes("You do not have a") || resultText.includes("Nothing happens"))) {
         if (this.isGameCleared()) {
+          document.querySelector("div.game").style.opacity = 0;
           setTimeout(function(){document.querySelector("div.game").style.display = "none"}, 3000);
           setTimeout(function(){document.querySelector("div.win").style.display = "block"}, 3000);
         }

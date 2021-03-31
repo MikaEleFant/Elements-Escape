@@ -1,6 +1,8 @@
 .game {
   grid-template-columns: 235px 235px 235px 235px;
   grid-template-rows: 50px 260px 260px 50px;
+  opacity: 1;
+  transition: opacity 2s linear;
 }
 
 .logs-container {
