@@ -36,21 +36,26 @@
       <p>Type in your next action in the input box. Make sure to format your input correctly as shown:</p>
       <ul class="action-list">
         <li class="use-how-to">
-          USE: Choose an item to use. For example: "USE lighter". If you wish to use an item on another item, follow it up with the "on" keyword. For example: "USE key ON door". Order is important here!
+          USE: Choose an item to use. For example: "USE lighter". If you wish to use an item on another item, follow it up with the "on" keyword. 
+          For example: "USE key ON door". Order is important here! 
+          Although you may only use an item in your inventory, you can use an inventory item on an object not within your inventory.
         </li>
         <li class="inspect-how-to">
           INSPECT: Choose an item to closely inspect. Certain items require inspection before they can be used or combined, and can sometimes 
           reveal new items. For example: "INSPECT key".
         </li>
         <li class="pickup-how-to">
-          PICK UP: Choose an item to pick up and place in your inventory. Items you pick up will be displayed in the ITEMS section. Certain items 
+          PICK UP: Choose an item to pick up and place in your inventory. Items you pick up will be displayed in the ITEMS section. Items 
           need to be picked up in order to be used or combined. For example: "PICK UP key". 
         </li>
         <li class="combine-how-to">
           COMBINE: Choose two items to combine in order to create a new item. Although order is not important here, note that there is a
-          difference between combining items and using items. For example: "COMBINE door WITH doorknob". 
+          difference between combining items and using items. For example: "COMBINE door WITH doorknob". Remember, both items must be within
+          your inventory in order to combine them!
         </li>
       </ul>
+
+      <p>That's it! Enjoy the game! HINT: When you enter a new room, INSPECT room to look around.</p>
 
       <button type="button" class="main-menu-button">Back to Menu</button>
     </div>
@@ -76,15 +81,17 @@
         <input type="text" class="entry" placeholder="Type your action here..."><button type="button" class="entry-button">Enter</button>
       </div>
 
+      <button type="button" class="in-game main-menu-button">Back to Menu</button>
+
       <div class="items-container">
         <p class="items-header">ITEMS</p>
         <div class="items">
-          <div class="item item0">1</div>
-          <div class="item item1">2</div>
-          <div class="item item2">3</div>
-          <div class="item item3">4</div>
-          <div class="item item4">5</div>
-          <div class="item item5">6</div>
+          <div class="item item0">EMPTY</div>
+          <div class="item item1">EMPTY</div>
+          <div class="item item2">EMPTY</div>
+          <div class="item item3">EMPTY</div>
+          <div class="item item4">EMPTY</div>
+          <div class="item item5">EMPTY</div>
         </div>
       </div>
     </div>

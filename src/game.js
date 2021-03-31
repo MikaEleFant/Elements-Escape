@@ -19,6 +19,7 @@ class Game {
   }
 
   start() {
+    this.player.inventory = [];
     this.printText(this.currentLevelStartText);
   }
 
@@ -66,27 +67,30 @@ class Game {
     }
     else {
       let itemName = inputWords.join("");
+      if (inputWords[0] == "up") {
+        itemName = inputWords.slice(1).join("");
+      }
+
       let item = this.currentLevelItems[itemName];
-      if (actionWord == "use") {
+      if (!item) {
+        resultText = this.noItemText(itemName);
+      }
+      else if (actionWord == "use") {
         resultText = this.player.use(item);
       }
       else if (actionWord == "inspect") {
         resultText = this.player.inspect(item);
       }
       else if (actionWord == "pick") {
-        if (inputWords[0] == "up") {
-          itemName = inputWords.slice(1).join("");
-          item = this.currentLevelItems[itemName];
+        console.log(itemName, inputWords);
+        item = this.currentLevelItems[itemName];
 
-          resultText = this.player.pickup(item);
-        }
-      }
-      else {
-        resultText = this.noItemText(itemName);
+        resultText = this.player.pickup(item);
       }
     }
 
     this.printText(resultText);
+    this.updateInventory();
   }
 
   noItemText(itemName) {
@@ -117,14 +121,31 @@ class Game {
     }
   }
 
+  updateInventory() {
+    let inventoryItems = document.querySelectorAll("div.item");
+
+    for (let i = 0; i < inventoryItems.length; i++) {
+      let item = this.player.inventory[i] ?? {printedName: "EMPTY"};
+      inventoryItems[i].innerHTML = item.printedName.toUpperCase();
+
+      if (item.printedName == "EMPTY") {
+        inventoryItems[i].style.color = "gray";
+      }
+      else {
+        inventoryItems[i].style.color = "white";
+      }
+    }
+  }
+
   isGameCleared() {
-    this.currentLevel == this.totalLevels;
+    return this.currentLevel == this.totalLevels - 1;
   }
 
   isLevelCleared(itemName, opened) {
     if (opened && itemName == "scanner") {
       if (this.isGameCleared()) {
-        
+        setTimeout(function(){document.querySelector("div.game").style.display = "none"}, 3000);
+        setTimeout(function(){document.querySelector("div.win").style.display = "block"}, 3000);
       }
       else {
         this.nextLevel();

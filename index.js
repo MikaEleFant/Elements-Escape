@@ -10,6 +10,8 @@ let mainMenu = document.querySelector("div.main-menu");
 let gameScreen = document.querySelector("div.game");
 let credits = document.querySelector("div.credits");
 let instructions = document.querySelector("div.instructions");
+let winScreen = document.querySelector("div.win");
+let logs = document.querySelector("ul.logs");
 
 let entry = document.querySelector("input.entry");
 let entryButton = document.querySelector("button.entry-button");
@@ -22,6 +24,9 @@ startButton.addEventListener("click", function(event) {
   event.preventDefault();
   mainMenu.style.display = "none";
   gameScreen.style.display = "grid";
+  while (logs.firstChild) {
+    logs.removeChild(logs.firstChild);
+  }
   game.start();
 })
 
@@ -40,7 +45,7 @@ creditsButton.addEventListener("click", function(event) {
 menuButtons.forEach(menuButton => menuButton.addEventListener("click", function(event) {
   event.preventDefault();
   mainMenu.style.display = "block";
-  [credits, instructions].forEach(nonMenuScreen => nonMenuScreen.style.display = "none");
+  [gameScreen, credits, instructions, winScreen].forEach(nonMenuScreen => nonMenuScreen.style.display = "none");
 }))
 
 entry.addEventListener("keyup", function(event) {
