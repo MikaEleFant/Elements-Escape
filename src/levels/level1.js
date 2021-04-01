@@ -56,7 +56,7 @@ let level1 = {
     }
   },
   basin: {
-    name: "plastic basin",
+    name: "basin",
     actions: {
       pickup: " ",
       inspect: "It's dusty, but it has no cracks or holes and seems to be able to hold water.",

@@ -28,7 +28,7 @@ button:hover {
   border: solid 2px aqua;
 }
 
-.game, .instructions, .credits, .main-menu {
+.game, .instructions, .credits, .win {
   display: none;
 }
 

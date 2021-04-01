@@ -8,7 +8,7 @@ class Player {
   }
 
   checkInventory(obj) {
-    this.inventory.includes(obj);
+    return this.inventory.includes(obj);
   }
 
   addInventory(obj) {
@@ -71,6 +71,9 @@ class Player {
 
     if (this.isInventoryFull()) {
       return "You try to pick up the " + obj.printedName + ", but you realize your inventory is full.";
+    }
+    else if (this.inventory.includes(obj)) {
+      return "You're already holding the " + obj.printedName + ".";
     }
 
     if (pickedup) {

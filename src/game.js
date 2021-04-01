@@ -82,7 +82,6 @@ class Game {
         resultText = this.player.inspect(item);
       }
       else if (actionWord == "pick") {
-        console.log(itemName, inputWords);
         item = this.currentLevelItems[itemName];
 
         resultText = this.player.pickup(item);
