@@ -158,6 +158,11 @@ class Game {
     this.currentLevel += 1;
     this.currentLevelStartText = this.allLevelsStart[this.currentLevel];
     this.currentLevelItems = levelItems[this.currentLevel];
+    
+    let logs = document.querySelector("ul.logs");
+    while (logs.firstChild) {
+      logs.removeChild(logs.firstChild);
+    }
     this.start();
   }
 }
