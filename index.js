@@ -4,21 +4,21 @@ import level1Items from "./src/levels/level1.js";
 
 let levelItems = [];
 levelItems.push(level1Items);
-let game = new Game(levelStartText, levelItems, levelItems.length);
+const game = new Game(levelStartText, levelItems, levelItems.length);
 
-let mainMenu = document.querySelector("div.main-menu");
-let gameScreen = document.querySelector("div.game");
-let credits = document.querySelector("div.credits");
-let instructions = document.querySelector("div.instructions");
-let winScreen = document.querySelector("div.win");
-let logs = document.querySelector("ul.logs");
+const mainMenu = document.querySelector("div.main-menu");
+const gameScreen = document.querySelector("div.game");
+const credits = document.querySelector("div.credits");
+const instructions = document.querySelector("div.instructions");
+const winScreen = document.querySelector("div.win");
+const logs = document.querySelector("ul.logs");
 
-let entry = document.querySelector("input.entry");
-let entryButton = document.querySelector("button.entry-button");
-let startButton = document.querySelector("button.start-button");
-let instructionsButton = document.querySelector("button.instructions-button");
-let creditsButtons = document.querySelectorAll("button.credits-button");
-let menuButtons = document.querySelectorAll("button.main-menu-button");
+const entry = document.querySelector("input.entry");
+const entryButton = document.querySelector("button.entry-button");
+const startButton = document.querySelector("button.start-button");
+const instructionsButton = document.querySelector("button.instructions-button");
+const creditsButtons = document.querySelectorAll("button.credits-button");
+const menuButtons = document.querySelectorAll("button.main-menu-button");
 
 startButton.addEventListener("click", function(event) {
   event.preventDefault();

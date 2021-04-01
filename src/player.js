@@ -24,8 +24,8 @@ class Player {
       return this.error(obj.printedName)
     }
 
-    let used = obj.itemUse();
-    let firstSentence = "You use the " + obj.printedName + ". ";
+    const used = obj.itemUse();
+    const firstSentence = "You use the " + obj.printedName + ". ";
 
     if (used) {
       this.removeInventory(obj);
@@ -41,8 +41,8 @@ class Player {
       return this.error(obj1.printedName);
     }
 
-    let used = obj1.itemUseOn(obj2.name);
-    let firstSentence = "You use the " + obj1.printedName + " on the " + obj2.printedName + ". ";
+    const used = obj1.itemUseOn(obj2.name);
+    const firstSentence = "You use the " + obj1.printedName + " on the " + obj2.printedName + ". ";
     
     if (used) {
       this.removeInventory(obj1);
@@ -54,8 +54,8 @@ class Player {
   }
 
   inspect(obj) {
-    let inspected = obj.itemInspect();
-    let firstSentence = "You inspect the " + obj.printedName + ". ";
+    const inspected = obj.itemInspect();
+    const firstSentence = "You inspect the " + obj.printedName + ". ";
 
     if (inspected) {
       return firstSentence + inspected;
@@ -66,8 +66,8 @@ class Player {
   }
 
   pickup(obj) {
-    let pickedup = obj.itemPickup();
-    let firstSentence = "You pick up the " + obj.printedName + ". ";
+    const pickedup = obj.itemPickup();
+    const firstSentence = "You pick up the " + obj.printedName + ". ";
 
     if (this.isInventoryFull()) {
       return "You try to pick up the " + obj.printedName + ", but you realize your inventory is full.";
@@ -93,8 +93,8 @@ class Player {
       return this.error(obj2.printedName)
     }
 
-    let combined = obj1.itemCombine(obj2.name) ?? obj2.itemCombine(obj1.name);
-    let firstSentence = "You combine the " + obj1.printedName + " with the " + obj2.printedName + ". ";
+    const combined = obj1.itemCombine(obj2.name) ?? obj2.itemCombine(obj1.name);
+    const firstSentence = "You combine the " + obj1.printedName + " with the " + obj2.printedName + ". ";
 
     if (combined) {
       this.removeInventory(obj1);

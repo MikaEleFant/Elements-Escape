@@ -24,7 +24,7 @@ class Game {
   }
 
   parseInput(input) {
-    let [actionWord, ...inputWords] = input.split(" ");
+    const [actionWord, ...inputWords] = input.split(" ");
     let resultText;
 
     if (!["use", "inspect", "pick", "combine"].includes(actionWord)) {
@@ -158,7 +158,7 @@ class Game {
     this.currentLevel += 1;
     this.currentLevelStartText = this.allLevelsStart[this.currentLevel];
     this.currentLevelItems = levelItems[this.currentLevel];
-    
+
     let logs = document.querySelector("ul.logs");
     while (logs.firstChild) {
       logs.removeChild(logs.firstChild);
