@@ -8,6 +8,10 @@ button {
   font-family: "Syne Mono";
 }
 
+a {
+  color: aqua;
+}
+
 button:hover {
   cursor: pointer;
   border: solid 1px white;
@@ -24,10 +28,14 @@ button:hover {
   border: solid 2px aqua;
 }
 
-.game, .instructions, .credits, .win {
+.game, .instructions, .credits, .main-menu {
   display: none;
 }
 
 b {
   color: aqua;
+}
+
+a {
+  text-decoration: none;
 }

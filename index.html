@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" property="og:description" content="A text-based escape game based on the elements!">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link href='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css' rel='stylesheet'>
@@ -10,10 +11,11 @@
   <link rel="stylesheet" href="style/default.css">
   <link rel="stylesheet" href="style/mainmenu.css">
   <link rel="stylesheet" href="style/instructions.css">
+  <link rel="stylesheet" href="style/credits.css">
   <link rel="stylesheet" href="style/game.css">
+  <link rel="stylesheet" href="style/win.css">
 
   <script type="module" src="index.js"></script>
-  <script src="src/test.js"></script>
   <title>Elements Escape</title>
 </head>
 <body>
@@ -66,23 +68,38 @@
     </div>
 
     <div class="credits">
-      <p>This project was created for Mintbean's Learnathon #084, JS GameHacks: Web Escape!</p>
-      <p>Mintbean is an awesome community for developers of all shapes and sizes! If you love coding, check out the <a href="https://www.mintbean.io/" target="_blank">Mintbean Homepage</a> here!</p>
-      <h3>Meet The Team!</h3>
-      <p>Chang Ho Lee</p>
-      <p>Yep! It's just me here! Another introverted developer plugging away in his goblin cave TT_TT</p>
-      <p>Feel free to reach out if you have any comments, suggestions, or just want to hang out and code!</p>
+      <div class="credits-top">
+        <p>This project was created for Mintbean's Learnathon #084, JS GameHacks: Web Escape!</p>
+        <p>Mintbean is an awesome community for developers of all shapes and sizes! If you love coding, check out the <a href="https://www.mintbean.io/" target="_blank">Mintbean Homepage</a> here!</p>
+      </div>
+      
+      <div class="credits-center">
+        <h3>Meet The Team!</h3>
+        <p>Chang Ho Lee</p>
+        <img class="profile-pic" src="style/profile.jpg">
+        <p>Yep! It's just me here! Another introverted developer plugging away in his goblin cave @_@</p>
+      </div>
 
-      <p><a href="https://www.linkedin.com/in/chang-ho-lee-72b96a19a/" target="_blank"><i class="devicon-linkedin-plain contact-icon"></i></a></p>
-      <p><a href="https://github.com/MikaEleFant/" target="_blank"><i class="devicon-github-plain contact-icon"></i></a></p>
-      <p><a href="https://mikaelefant.netlify.app/" target="_blank">Website</a></p>
+      <div class="credits-right">
+        <p>Feel free to reach out if you have any comments, suggestions, or just want to hang out and code!</p>
 
-      <p>Technologies used:</p>
-      <p><i class="skills-icon devicon devicon-javascript-plain"></i></p>
-      <p><i class="skills-icon devicon devicon-html5-plain-wordmark"></i></p>
-      <p><i class="skills-icon devicon devicon-css3-plain-wordmark"></i></p>
+        <div class="links">
+          <p><a href="https://www.linkedin.com/in/chang-ho-lee-72b96a19a/" target="_blank"><i class="devicon-linkedin-plain contact-icon"></i></a></p>
+          <p><a href="https://github.com/MikaEleFant/" target="_blank"><i class="devicon-github-plain contact-icon"></i></a></p>
+          <div><a href="https://mikaelefant.netlify.app/" target="_blank"><i class="devicon-ie10-original"></i></a></div>
+        </div>
+      </div>
 
-      <button type="button" class="main-menu-button">Back to Menu</button>
+      <div class="credits-left">
+        <p>Technologies used in Elements Escape:</p>
+        <div class="technologies">
+          <p><i class="skills-icon devicon devicon-javascript-plain"></i></p>
+          <p><i class="skills-icon devicon devicon-html5-plain-wordmark"></i></p>
+          <p><i class="skills-icon devicon devicon-css3-plain-wordmark"></i></p>
+        </div>
+      </div>
+
+      <button type="button" class="credits-bottom main-menu-button">Back to Menu</button>
     </div>
 
     <div class="game">
@@ -111,16 +128,20 @@
     </div>
 
     <div class="win">
-      <h1>To be continued...</h1>
+      <h1 class="win-header">To be continued...</h1>
 
       <h3>Hi! Thanks for playing my game!</h3>
       <p>If you enjoyed this, please share it with your friends!</p>
+
+      <div class="share-links">
+        <a href="https://twitter.com/share?url=https://elements-escape.netlify.app/&text=Elements%20Escape&via=MikaEleFant" target="_blank"><i class="devicon-twitter-original"></i></a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://elements-escape.netlify.app/" target="_blank"><i class="devicon-facebook-plain"></i></a>
+        <a href="https://www.linkedin.com/shareArticle?url=https://elements-escape.netlify.app/&title=Elements%20Escape" target="_blank"><i class="devicon-linkedin-plain"></i></a>
+      </div>
+
       <p>Make sure to check out <a href="https://www.mintbean.io/" target="_blank">Mintbean</a> as well! Huge thanks to them & their community for all the support!</p>
 
-      <p><a href="https://www.linkedin.com/in/chang-ho-lee-72b96a19a/" target="_blank"><i class="devicon-linkedin-plain contact-icon"></i></a></p>
-      <p><a href="https://github.com/MikaEleFant/" target="_blank"><i class="devicon-github-plain contact-icon"></i></a></p>
-      <p><a href="https://mikaelefant.netlify.app/" target="_blank">Website</a></p>
-
+      <button type="button" class="credits-button">Credits</button><br/>
       <button type="button" class="main-menu-button">Back to Menu</button>
     </div>
   </div>

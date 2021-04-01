@@ -17,7 +17,7 @@ let entry = document.querySelector("input.entry");
 let entryButton = document.querySelector("button.entry-button");
 let startButton = document.querySelector("button.start-button");
 let instructionsButton = document.querySelector("button.instructions-button");
-let creditsButton = document.querySelector("button.credits-button");
+let creditsButtons = document.querySelectorAll("button.credits-button");
 let menuButtons = document.querySelectorAll("button.main-menu-button");
 
 startButton.addEventListener("click", function(event) {
@@ -36,11 +36,12 @@ instructionsButton.addEventListener("click", function(event) {
   instructions.style.display = "block";
 })
 
-creditsButton.addEventListener("click", function(event) {
+creditsButtons.forEach(creditsButton => creditsButton.addEventListener("click", function(event) {
   event.preventDefault();
   mainMenu.style.display = "none";
-  credits.style.display = "block";
-})
+  winScreen.style.display = "none";
+  credits.style.display = "grid";
+}))
 
 menuButtons.forEach(menuButton => menuButton.addEventListener("click", function(event) {
   event.preventDefault();
