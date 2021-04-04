@@ -5,6 +5,28 @@ let level2 = {
       inspect: "That said, there isn't much to look at here. There's four huge dusty <b>neon signs</b> on the floor in front of you. In the corner, there's a small <b>nail</b> next to another <b>empty vial</b>. In the opposite corner, there's a lonely little <b>table</b>. And of course, on the wall in front of you is another <b>door</b> with a <b>scanner</b> next to it."
     }
   },
+  door: {
+    name: "door",
+    actions: {
+      inspect: "Again, made of solid metal. This time, it has '2' and 'He' engraved upon it. Another clue, perhaps?"
+    }
+  },
+  table: {
+    name: "table",
+    actions: {
+      inspect: "On the surface are more research papers. These say 'Noble Gas Electroluminescence'. Interesting..."
+    }
+  },
+  emptyvial: {
+    name: "empty vial",
+    actions: {
+      pickup: " ",
+      inspect: "It's made of glass, with another cork on top. Useful for storing things.",
+      useOn: {
+        puncturedsign: "Uncorking the vial, you put it on top of the hole in the punctured sign. Interestingly, you can feel the vial becoming 'lighter' as you hold it. Interesting! It seems you now have a <b>full vial</b> of helium!"
+      }
+    }
+  },
   neonsigns: {
     name: "neon signs",
     actions: {
@@ -45,7 +67,28 @@ let level2 = {
       }
     }
   },
-  
+  puncturedsign: {
+    name: "punctured sign",
+    actions: {
+      inspect: "It's leaking gas! Hurry and gather it!"
+    }
+  },
+  scanner: {
+    name: "scanner",
+    actions: {
+      inspect: "It seems to be the same as the last scanner: electronic with a groove in the shape of a circle in it. Another vial, eh?"
+    }
+  },
+  fullvial: {
+    name: "full vial",
+    actions: {
+      pickup: " ",
+      inspect: "It's filled with helium. Interestingly enough, the vial does feel lighter than before!",
+      useOn: {
+        scanner: "The scanner beeps, and the door unlocks. You brace yourself and take a deep breath before walking through it into the darkness that lies beyond as the door shuts behind you."
+      }
+    }
+  }
 }
 
 export default level2;

@@ -1,9 +1,10 @@
 import Game from "./src/game.js";
 import levelStartText from "./src/levels/levels_start.js";
 import level1Items from "./src/levels/level1.js";
+import level2Items from "./src/levels/level2.js";
 
 let levelItems = [];
-levelItems.push(level1Items);
+levelItems.push(level1Items, level2Items);
 const game = new Game(levelStartText, levelItems, levelItems.length);
 
 const mainMenu = document.querySelector("div.main-menu");
